@@ -1,0 +1,45 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>xx</title>
+</head>
+<body>
+<div >
+    <table border="1">
+        <tr>
+            <th>id</th>
+            <th>用户名</th>
+            <th>密码</th>
+            <th>性别</th>
+        </tr>
+        <tr th:each="user:${users}">
+            <td th:text="${user.id}"></td>
+            <td th:text="${user.username}"></td>
+            <td th:text="${user.password}"></td>
+            <td >
+                <span th:if="${user.sex} == '男'">男</span>
+                <span th:if="${user.sex} == '女'">女</span>
+            </td>
+        </tr>
+    </table>
+    <hr>
+<div>map的遍历</div>
+    <table border="1">
+        <tr>
+            <th>id</th>
+            <th>username</th>
+            <th>password</th>
+            <th>sex</th>
+        </tr>
+        <tr th:each="node:${map}">
+            <td th:each="entry : ${node}" th:text="${entry.value.id}"></td>
+            <td th:each="entry : ${node}" th:text="${entry.value.username}"></td>
+            <td th:each="entry : ${node}" th:text="${entry.value.password}"></td>
+            <td th:each="entry : ${node}" th:text="${entry.value.sex}"></td>
+        </tr>
+    </table>
+
+
+</div>
+</body>
+</html>
