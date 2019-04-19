@@ -1,0 +1,8 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://47.74.214.2:3306/new_coin?useUnicode=true&characterEncoding=UTF-8
+    username: root
+    password: Vv20180405$$
+mybatis:
+  mapper-locations: classpath:mapper/*.xml

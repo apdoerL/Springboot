@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.apdoer.springbootmybatis.com.apdoer.mapper.UserMapper">
+
+    <resultMap id="BaseResultMap" type="com.apdoer.springbootmybatis.com.apdoer.pojo.User">
+        <id column="user_id" jdbcType="BIGINT" property="userId"/>
+        <result column="account" jdbcType="VARCHAR" property="account"/>
+        <result column="name" jdbcType="VARCHAR" property="name"/>
+        <result column="email" jdbcType="VARCHAR" property="email"/>
+        <result column="password" jdbcType="VARCHAR" property="password"/>
+        <result column="google_code" jdbcType="VARCHAR" property="googleCode"/>
+        <result column="avator" jdbcType="VARCHAR" property="avator"/>
+        <result column="enabled" jdbcType="TINYINT" property="enabled"/>
+        <result column="remark" jdbcType="VARCHAR" property="remark"/>
+        <result column="create_time" jdbcType="TIMESTAMP" property="createTime"/>
+    </resultMap>
+    <select id="getUser" resultMap="BaseResultMap">
+        select  * from web_user limit 1
+    </select>
+
+    <insert id="insertUser" >
+        insert into  web_user (username,password) values (#{username},#{password})
+    </insert>
+</mapper>
